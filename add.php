@@ -40,7 +40,7 @@
 					</div>
 					<div class="form-group">
 						<label>Kode Pos Kostumer</label>
-						<input type="text" class="form-control col-md-4" name="kodePos" placeholder="isi Kode Pos disini">
+						<input type="number" class="form-control col-md-4" name="kodePos" placeholder="isi Kode Pos disini">
 					</div>
 					<div class="form-group">
 						<button class="btn btn-info" name="submit" type="submit">Simpan</button>

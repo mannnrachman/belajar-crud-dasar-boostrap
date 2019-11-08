@@ -6,5 +6,3 @@
 - Etc.
 
 Database on folder / Open CMD (Win+R) type "cmd"
-
-

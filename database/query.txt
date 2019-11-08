@@ -1,0 +1,37 @@
+cd C:/xampp/mysql/bin
+
+mysql -u root
+
+show databases;
+
+create database penjualan_barang;
+
+use penjualan_barang;
+
+show tables;
+
+create table karyawan(idKaryawan int(9) not null primary key, 
+nmKaryawan varchar(50) not null,
+tglLahir date,
+telp char(15),
+alamat text);
+
+desc karyawan;
+
+alter table pesanan add foreign key(idKustomer) references kustomer(idKustomer);
+
+alter table pesanan add foreign key(idKaryawan) references kustomer(idKaryawan);
+
+alter table kustomer change kodePost kodePos int(8);
+
+INSERT INTO karyawan(idKaryawan, nmKaryawan, tglLahir, telp, alamat) VALUES('1122334455','Aaoron','1999-01-08','089372462777','Jl. Kaca Piring');
+
+INSERT INTO kustomer(idKustomer,nmKustomer,telp,alamat,kota,kodePos) VALUES('987654321','Luffy','083726872231','Jl. Sutoyo S','Banjarmasin','70117');
+
+insert into pesanan(idPesan, idKustomer, idKaryawan, tglPesan) values('55732','987654321','1122334455','2019-11-01');
+
+UPDATE karyawan SET alamat = 'Jl. Meratus' WHERE idKaryawan = '1122334477';
+
+DELETE FROM karyawan WHERE idKaryawan = '1122334477';
+
+SELECT * FROM pesanan INNER JOIN kustomer ON pesanan.idKustomer = kustomer.idKustomer INNER JOIN karyawan ON pesanan.idKaryawan = karyawan.idKaryawan;

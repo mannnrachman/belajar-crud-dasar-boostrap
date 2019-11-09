@@ -21,8 +21,8 @@
 					include "koneksi.php";
 					$id = $_GET['id'];
 					$no = 1;
-					$sql = mysqli_query($koneksi, "SELECT * FROM kustomer");
-					while ($data = mysqli_fetch_array($sql)) {
+					$sql = mysqli_query($koneksi, "SELECT * FROM kustomer WHERE idKustomer = '$id'");
+					$data = mysqli_fetch_array($sql);
 				?>
 					<form class="form-item" action="" method="post" role="form">
 						<div class="form-group">
@@ -53,10 +53,7 @@
 							<button class="btn btn-info" name="submit" type="submit">Edit</button>
 							<button class="btn btn-danger" name="reset" type="reset">Batal</button>
 						</div>
-					</form>
-				<?php
-					}
-				?>
+					</form>				
 			</div>
 		</div>
 	</div>

@@ -22,7 +22,7 @@
 					$id = $_GET['id'];
 					$no = 1;
 					$sql = mysqli_query($koneksi, "SELECT * FROM kustomer WHERE idKustomer = '$id'");
-					$data = mysqli_fetch_array($sql);
+					$data = mysqli_fetch_array($sql); //update tanpa while
 				?>
 					<form class="form-item" action="" method="post" role="form">
 						<div class="form-group">
